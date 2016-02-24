@@ -7,7 +7,7 @@ public class LetterCount : MonoBehaviour {
 		// Simple String Stuff
 		string message = "Hello, World!";
 		GetComponent<Text> ().text =
-			string.Format ("{0} => {1} ({2})", message,
+			string.Format ("{0} => \n  Rust: {1}; C#: {2}", message,
 			              CoreAPI.LetterCount (message), message.Length);
 	}
 }
