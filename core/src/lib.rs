@@ -71,23 +71,33 @@ pub extern fn rust_collection_new() -> *mut RustCollection {
 
 #[no_mangle]
 pub unsafe extern fn rust_collection_destroy(collection: *mut RustCollection) {
-    let _ = Box::from_raw(collection);
+    if !collection.is_null() {
+        let _ = Box::from_raw(collection);
+    }
 }
 
 #[no_mangle]
 pub extern fn rust_collection_add_int(collection: *mut RustCollection, value: libc::c_int) {
-    let collection = unsafe { &mut *collection };
-    collection.add_int(value as i32);
+    if !collection.is_null() {
+        let collection = unsafe { &mut *collection };
+        collection.add_int(value as i32);
+    }
 }
 
 #[no_mangle]
 pub extern fn rust_collection_add_float(collection: *mut RustCollection, value: libc::c_float) {
-    let collection = unsafe { &mut *collection };
-    collection.add_float(value as f32);
+    if !collection.is_null() {
+        let collection = unsafe { &mut *collection };
+        collection.add_float(value as f32);
+    }
 }
 
 #[no_mangle]
 pub extern fn rust_collection_length(collection: *const RustCollection) -> libc::c_uint {
+    if collection.is_null() {
+        return 0;
+    }
+
     let collection = unsafe { &*collection };
     collection.count() as libc::c_uint
 }
