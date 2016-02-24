@@ -1,0 +1,11 @@
+[package]
+name = "core"
+version = "0.1.0"
+authors = ["decauwsemaecker.glen@gmail.com <decauwsemaecker.glen@gmail.com>"]
+
+[lib]
+name = "core"
+crate-type = ["dylib"]
+
+[dependencies]
+libc = "0.2.7"
