@@ -44,3 +44,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+unity/Export/
