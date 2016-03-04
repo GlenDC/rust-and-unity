@@ -14,7 +14,18 @@ More specifically for games that would target iOS and Android.
 + iOS Toolchain (Xcode + SDK)
 + Android ToolChain (SDK/NDK/Standalone Toolchain)
 
-### References
+## Note About Rust Cross-Compilation
+
+As long as you're developing within and OSX environment, it is pretty easy to deploy your code onto iOS and OSX. Pretty much the only requirements seem to be that you have the iOS SDK and have the std libs of your rust lib available in your Rust Environment. These can be build yourself if you like to wait for an hour, or you can simply download the from the archives as mentioned above.
+
+For Android however you won't get away with simply downloading the SDK, NDK and setting up the Standalone toolchain. On top of that you also need to add _2 lines_ into your global `$HOME/.cargo/config` file:
+
+    [target.arm-linux-androideabi]
+    linker = "arm-linux-androideabi-gcc"
+
+This basically defines that when passing the target to `cargo build` (as can be seen in the `core/build.sh` script of this repository) that it will use `arm-linux-androideabi-gcc` as the linker. As long as you've setup your Android Development Environment correctly, it should be as simple as that.
+
+## References
 
 + [Build Servo for Android](https://github.com/servo/servo/wiki/Building-for-Android): Requirements for Android
 + [Cross Compilation of Rust](https://github.com/japaric/rust-cross#cross-compiling-with-cargo): All information about the different targets for cargo
