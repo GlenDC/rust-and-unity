@@ -34,7 +34,6 @@ ExportedObj/
 *.booproj
 *.svd
 
-
 # Unity3D generated meta files
 *.pidb.meta
 
@@ -46,3 +45,18 @@ sysinfo.txt
 *.unitypackage
 
 unity/Export/
+
+# Maven
+core/android/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+core/android/.mvn/timing.properties
+
+# ignore unity plugins
+unity/Assets/Plugins/
+unity/Assets/Plugins.meta

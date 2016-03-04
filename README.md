@@ -5,14 +5,15 @@ More specifically for games that would target iOS and Android.
 
 ## Requirements
 
-+ Rust
-+ Unity3D
-+ Multirust (a tool to switch between different rust environments for specific local folders)
++ Rust;
++ Unity3D;
++ Multirust (a tool to switch between different rust environments for specific local folders):
   + this way you can download the nightlies for iOS/Android/OSX and use them for this repository;
   + You can find a nightly version with all the std libs @ [Rust Downloads Archives](http://static.rust-lang.org/dist/index.html);
   + I used the 2016/02/29 versions for my experiments and they work on all 3 platforms mentioned;
-+ iOS Toolchain (Xcode + SDK)
-+ Android ToolChain (SDK/NDK/Standalone Toolchain)
++ iOS Toolchain (Xcode + SDK);
++ Android ToolChain (SDK/NDK/Standalone Toolchain);
++ Maven (for building the java-jar-glue we'll need for Android Deployment);
 
 ## Note About Rust Cross-Compilation
 
