@@ -27,5 +27,6 @@ This basically defines that when passing the target to `cargo build` (as can be 
 
 ## References
 
-+ [Build Servo for Android](https://github.com/servo/servo/wiki/Building-for-Android): Requirements for Android
-+ [Cross Compilation of Rust](https://github.com/japaric/rust-cross#cross-compiling-with-cargo): All information about the different targets for cargo
++ [Build Servo for Android](https://github.com/servo/servo/wiki/Building-for-Android): Requirements for Android;
++ [Cross Compilation of Rust](https://github.com/japaric/rust-cross#cross-compiling-with-cargo): All information about the different targets for cargo;
++ [Rust FAQ - "Can Rust be used for Android/IOS Programming"](https://www.rust-lang.org/faq.html#can-rust-be-used-for-android-ios-programs): That basically gave me the confidence that it's possible. It also links to 2 sources that helped me with some problems I faced. (e.g. missing symboles on iOS);
