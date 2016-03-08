@@ -16,6 +16,9 @@ public class CoreAPI {
 
 	[DllImport("__Internal")]
 	private static extern void log_message([MarshalAs(UnmanagedType.LPStr)] string message);
+
+	[DllImport("__Internal")]
+	private static extern void get_mobile_greeting(out string message);
 #else
 	[DllImport("libcore")]
 	private static extern int letter_count([MarshalAs(UnmanagedType.LPStr)] string msg);
@@ -26,6 +29,9 @@ public class CoreAPI {
 
 	[DllImport("libcore")]
 	private static extern void log_message([MarshalAs(UnmanagedType.LPStr)] string message);
+
+	[DllImport("libcore")]
+	private static extern void get_mobile_greeting(out string message);
 #endif
 
 	public static int LetterCount(string msg)
@@ -41,5 +47,12 @@ public class CoreAPI {
 	public static void LogMessage(string message)
 	{
 		log_message(message);
+	}
+
+	public static string GetMobileGreeting()
+	{
+		string output;
+		get_mobile_greeting(out output);
+		return output;
 	}
 }

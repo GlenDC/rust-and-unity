@@ -21,4 +21,9 @@ extern "C"  {
     {
         NSLog(@"%@\n", CreateNSString(message));
     }
+    
+    const char* getMobileGreeting()
+    {
+        return "Hello, this is iOS, talking from Objective-C++!";
+    }
 }

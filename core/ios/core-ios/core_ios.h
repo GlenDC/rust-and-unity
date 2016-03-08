@@ -10,4 +10,5 @@
 
 extern "C"  {
     void logMessage(const char* message);
+    const char* getMobileGreeting();
 }
