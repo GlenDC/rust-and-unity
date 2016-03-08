@@ -60,3 +60,13 @@ core/android/.mvn/timing.properties
 # ignore unity plugins
 unity/Assets/Plugins/
 unity/Assets/Plugins.meta
+Build-*/
+
+# ignore xcode stuff
+.Trashes
+*.lock
+*~.nib
+DerivedData/
+build/
+xcuserdata/
+*.pbxuser
