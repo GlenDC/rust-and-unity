@@ -9,3 +9,6 @@ crate_type = ["staticlib", "dylib"]
 
 [dependencies]
 libc = "0.2.7"
+
+[target.arm-linux-androideabi.dependencies]
+android_glue = "0.1.3"
