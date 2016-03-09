@@ -2,18 +2,14 @@ extern crate libc;
 
 use std::{ffi, vec, ops, boxed};
 
-#[macro_use]
-mod macros;
+#[cfg(target_os = "android")]
+pub mod android;
 
-cfg_if! {
-    if #[cfg(android)] {
-        pub mod android;
-    } else if #[cfg(ios)] {
-        pub mod ios;
-    } else {
-        pub mod desktop;
-    }
-}
+#[cfg(target_os = "ios")]
+pub mod ios;
+
+#[cfg(all(not(target_os = "android"), not(target_os = "ios")))]
+pub mod desktop;
 
 #[no_mangle]
 pub extern fn letter_count(msg: *const libc::c_char) -> libc::c_int {

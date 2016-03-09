@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C5883F111C8DD7C90014D130 /* core_ios.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C5883F101C8DD7C90014D130 /* core_ios.h */; };
-		C5883F131C8DD7C90014D130 /* core_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = C5883F121C8DD7C90014D130 /* core_ios.mm */; };
+		C5883F131C8DD7C90014D130 /* core_ios.m in Sources */ = {isa = PBXBuildFile; fileRef = C5883F121C8DD7C90014D130 /* core_ios.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		C5883F0D1C8DD7C90014D130 /* libcore-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libcore-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5883F101C8DD7C90014D130 /* core_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core_ios.h; sourceTree = "<group>"; };
-		C5883F121C8DD7C90014D130 /* core_ios.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = core_ios.mm; sourceTree = "<group>"; };
+		C5883F121C8DD7C90014D130 /* core_ios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = core_ios.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				C5883F101C8DD7C90014D130 /* core_ios.h */,
-				C5883F121C8DD7C90014D130 /* core_ios.mm */,
+				C5883F121C8DD7C90014D130 /* core_ios.m */,
 			);
 			path = "core-ios";
 			sourceTree = "<group>";
@@ -122,7 +122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5883F131C8DD7C90014D130 /* core_ios.mm in Sources */,
+				C5883F131C8DD7C90014D130 /* core_ios.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

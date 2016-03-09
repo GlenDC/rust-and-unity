@@ -8,7 +8,5 @@
 
 #import <Foundation/Foundation.h>
 
-extern "C"  {
-    void logMessage(const char* message);
-    const char* getMobileGreeting();
-}
+extern void logMessage(const char* message);
+extern const char* getMobileGreeting();

@@ -16,14 +16,13 @@ NSString* CreateNSString(const char* string)
         return [NSString stringWithUTF8String: ""];
 }
 
-extern "C"  {
-    void logMessage(const char* message)
-    {
-        NSLog(@"%@\n", CreateNSString(message));
-    }
+
+extern void logMessage(const char* message)
+{
+    NSLog(@"%@\n", CreateNSString(message));
+}
     
-    const char* getMobileGreeting()
-    {
-        return "Hello, this is iOS, talking from Objective-C++!";
-    }
+extern const char* getMobileGreeting()
+{
+    return "Hello, this is iOS, talking from Objective-C!";
 }
