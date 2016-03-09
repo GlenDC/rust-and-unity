@@ -1,11 +1,19 @@
-/*#![cfg(target_os = "android")]
-pub mod android;*/
-#![cfg(target_os = "ios")]
-pub mod ios;
-
 extern crate libc;
 
-use std::ffi;
+use std::{ffi, vec, ops, boxed};
+
+#[macro_use]
+mod macros;
+
+cfg_if! {
+    if #[cfg(android)] {
+        pub mod android;
+    } else if #[cfg(ios)] {
+        pub mod ios;
+    } else {
+        pub mod desktop;
+    }
+}
 
 #[no_mangle]
 pub extern fn letter_count(msg: *const libc::c_char) -> libc::c_int {
@@ -40,12 +48,12 @@ pub enum RCType {
 
 #[derive(Debug)]
 pub struct RustCollection {
-    values : Vec<RCType>,
+    values : vec::Vec<RCType>,
 }
 
 impl RustCollection {
     fn new() -> RustCollection {
-        RustCollection { values: Vec::new() }
+        RustCollection { values: vec::Vec::new() }
     }
 
     fn add_int(&mut self, value: i32) {
@@ -61,7 +69,7 @@ impl RustCollection {
     }
 }
 
-impl Drop for RustCollection {
+impl ops::Drop for RustCollection {
     fn drop(&mut self) {
         println!("{:?} is being deallocated", self);
     }
@@ -70,14 +78,14 @@ impl Drop for RustCollection {
 #[no_mangle]
 pub extern fn rust_collection_new() -> *mut RustCollection {
     let rust_collection = RustCollection::new();
-    let boxed_data = Box::new(rust_collection);
-    Box::into_raw(boxed_data)
+    let boxed_data = boxed::Box::new(rust_collection);
+    boxed::Box::into_raw(boxed_data)
 }
 
 #[no_mangle]
 pub unsafe extern fn rust_collection_destroy(collection: *mut RustCollection) {
     if !collection.is_null() {
-        let _ = Box::from_raw(collection);
+        let _ = boxed::Box::from_raw(collection);
     }
 }
 
